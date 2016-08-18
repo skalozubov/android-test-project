@@ -31,3 +31,7 @@ cache:
 
 script:
   - ./gradlew build --info
+
+after-failure:
+  - cd /home/travis/build/skalozubov/android-test-project/app/build/outputs/
+  - cat lint-results-debug.html

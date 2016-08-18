@@ -30,8 +30,8 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-  - ./gradlew build --info
+  - ./gradlew assembleRelease lintRelease testReleaseUnitTest
 
 after-failure:
-  - cd /home/travis/build/skalozubov/android-test-project/app/build/outputs/
-  - cat lint-results-debug.html
+  cd app/build/outputs/
+  cat lint-results-debug.html
